@@ -182,7 +182,7 @@ header a:hover {
 }
 
 section {
-    padding: 3em 8em 0 8em;
+    padding: 4em 8em;
 }
 
 .section1 {
@@ -199,11 +199,11 @@ section {
 }
 
 .section-left {
-    flex: 60%;
+    flex: 65%;
 }
 
 .section-right {
-    flex: 40%;
+    flex: 35%;
 }
 
 .section1 div:last-child {
@@ -229,10 +229,15 @@ section {
 }
 
 .section2-left {
-    flex: 40%;
+    flex: 35%;
 }
 .section2-right {
-    flex: 60%;
+    flex: 65%;
+    padding-left: 6em;
+}
+
+.section2-right .section-text-container {
+    padding-right: 0;
 }
 
 .section2 div:first-child {
@@ -269,7 +274,16 @@ section a {
 }
 
 .section-text-container {
-    padding: 2em;
+    padding: 6em;
+}
+
+
+.numero {
+    position: absolute;
+    font-size: 10em;
+    z-index: 6;
+    opacity: 40%;
+    font-weight: bold;
 }
 
 footer {
@@ -352,7 +366,7 @@ footer ul li a:hover {
     z-index: 20;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .social p {
@@ -432,14 +446,27 @@ footer ul li a:hover {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
+    .numero {
+        display: none;
+    }
+    section {
+        padding: 3em;
+    }
+
+    .section-text-container {
+        padding: 0;
+    }
     .hero-container {
         width: 100%;
         margin: auto;
         padding-bottom: 2em;
     }
     .hero-title {
-        font-size: 3em;
+        font-size: 2.5em;
+    }
+    .hero-subtitle {
+        font-size: 0.8em;
     }
     .parallax img {
         width: 140%;
@@ -457,7 +484,7 @@ footer ul li a:hover {
     }
 
     .hero {
-        height: 80vh;
+        height: 100vh;
     }
 
     section {
@@ -467,7 +494,8 @@ footer ul li a:hover {
     .section1 {
         height: auto;
         background: linear-gradient(to bottom, rgba(11, 29, 38, 0) 0%, #0B1D26 30%);
-        top: 80vh;
+        top: 100vh;
+        text-align: justify;
     }
 
     .section-left, .section-right {
@@ -478,17 +506,21 @@ footer ul li a:hover {
         flex: auto;
     }
 
+    .section2-right {
+        padding-left: 0;
+    }
+
     .section2 {
-        top: 180vh;
+        top: 200vh;
         flex-direction: column-reverse;
     }
 
     .section3 {
-        top: 280vh;
+        top: 300vh;
     }
 
     footer {
-        top: 380vh;
+        top: 400vh;
     }
 
     .social, .navigation {
