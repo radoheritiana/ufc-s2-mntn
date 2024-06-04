@@ -11,8 +11,6 @@ window.onload = function() {
 
     window.addEventListener('scroll', function() {
 
-        console.log(this.window.pageYOffset);
-
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             document.getElementById("header").classList.add('scroll');
         } else {
@@ -49,4 +47,34 @@ window.onload = function() {
         });
     });
 
+    let btn_menu = document.querySelector("#btn-menu");
+
+    btn_menu.addEventListener('click', function() {
+        let status = this.dataset.status
+
+        if (status === 'close') {
+            document.getElementById("nav").style.display = 'block';
+            document.getElementById("account").style.display = 'block';
+            this.dataset.status = "open";
+            this.innerHTML = '<i class="fa fa-x"></i>';
+        } else {
+            document.getElementById("nav").style.display = 'none';
+            document.getElementById("account").style.display = 'none';
+            this.dataset.status = "close";
+            this.innerHTML = '<i class="fa fa-bars"></i>';
+        }
+    })
+
+    window.addEventListener("resize", function(){
+        if(window.innerWidth > 800) {
+            document.getElementById("nav").style.display = 'block';
+            document.getElementById("account").style.display = 'block';
+            document.getElementById("btn-menu").dataset.status = 'close';
+            document.getElementById("btn-menu").innerHTML = '<i class="fa fa-bars"></i>';
+        } else {
+            document.getElementById("nav").style.display = 'none';
+            document.getElementById("account").style.display = 'none';
+        }
+    });
 }
+
